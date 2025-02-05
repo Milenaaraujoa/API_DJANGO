@@ -3,6 +3,7 @@ from rest_framework import serializers
 from .models import Alunos, Turmas, Evento
 
 class AlunosSerializer(serializers.ModelSerializer):
+    data_nascimento = serializers.DateField(format="%d/%m/%Y", input_formats=["%d/%m/%Y", "%Y-%m-%d"])
     class Meta:
         model = Alunos
         fields = '__all__'

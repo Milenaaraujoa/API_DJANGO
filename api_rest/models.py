@@ -19,7 +19,7 @@ class Alunos(models.Model):
     nome = models.CharField(max_length=200)
     email = models.EmailField()
     data_nascimento = models.DateField()
-    telefone = models.CharField(max_length=10)
+    telefone = models.CharField(max_length=12)
     cep = models.CharField(max_length=9, null=True)
     rua = models.CharField(max_length=200, null=True)
     bairro = models.CharField(max_length=100, null=True, blank=True)
@@ -28,6 +28,7 @@ class Alunos(models.Model):
     numero = models.IntegerField( null=True)
     modalidade = models.CharField(max_length=50, null=True)
     turmas = models.CharField(max_length=50, null=True)
+    data_matricula = models.DateField(auto_now_add=True)
     
     
     def whatsapp_message_button(self):
@@ -55,4 +56,7 @@ class Evento(models.Model):
     vagas = models.IntegerField()
     data_evento = models.DateField()
     valor = models.DecimalField(max_digits=5, decimal_places=2)
-    
+
+class ContagemAlunos(models.Model):
+    mes = models.CharField(max_length=7, unique=True)  # Ex: "2025-02"
+    quantidade = models.IntegerField(default=0)
