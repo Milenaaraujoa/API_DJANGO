@@ -25,7 +25,7 @@ class Alunos(models.Model):
     nome = models.CharField(max_length=200)
     email = models.EmailField()
     data_nascimento = models.DateField()
-    telefone = models.CharField(max_length=12)
+    telefone = models.CharField(max_length=25)
     cep = models.CharField(max_length=9, null=True)
     rua = models.CharField(max_length=200, null=True)
     bairro = models.CharField(max_length=100, null=True, blank=True)

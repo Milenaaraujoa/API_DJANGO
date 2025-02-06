@@ -24,6 +24,7 @@ class AlunoRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
 
 # Views para Turmas
 class TurmaListCreate(generics.ListCreateAPIView):
+    permission_classes = [AllowAny]
     queryset = Turmas.objects.all()
     serializer_class = TurmasSerializer
 
