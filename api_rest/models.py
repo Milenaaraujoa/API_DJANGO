@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import datetime
 from django.db import models
 from django.utils.html import format_html
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
@@ -28,7 +28,6 @@ class Alunos(models.Model):
     numero = models.IntegerField( null=True)
     modalidade = models.CharField(max_length=50, null=True)
     turmas = models.CharField(max_length=50, null=True)
-    data_matricula = models.DateField(auto_now_add=True)
     
     
     def whatsapp_message_button(self):
@@ -49,6 +48,7 @@ class Alunos(models.Model):
 
     def __str__(self):
         return self.nome
+    
     
 
 class Evento(models.Model):

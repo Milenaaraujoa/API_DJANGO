@@ -16,6 +16,8 @@ class AlunoListCreate(generics.ListCreateAPIView):
 class AlunoRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = Alunos.objects.all()
     serializer_class = AlunosSerializer
+    
+    
 
 # Views para Turmas
 class TurmaListCreate(generics.ListCreateAPIView):
