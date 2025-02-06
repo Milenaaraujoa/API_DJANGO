@@ -64,7 +64,7 @@ class Turmas(models.Model):
     
 
 class Evento(models.Model):
-    id_evento = models.AutoField(primary_key=True, default=1)
+    id_evento = models.AutoField(primary_key=True)
     nome_evento = models.CharField(max_length=100)
     vagas = models.IntegerField()
     data_evento = models.DateField()
